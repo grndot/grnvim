@@ -1,0 +1,97 @@
+-- Load the cmp plugin
+local cmp = require('cmp')
+
+-- Configure cmp
+cmp.setup({
+  -- Enable autocompletion
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end
+  },
+
+  -- Use the nvim-cmp completion engine
+  completion = {
+    completeopt = 'menu,menuone,noinsert',
+    -- You may need to adjust this path depending on where you installed nvim-cmp
+    autocomplete = {
+      enable = true,
+      keyword_length = 2,
+      trigger_keyword_length = 2,
+      keyword_pattern = "\\k+",
+      max_item_count = 5,
+      -- Use the nvim-cmp completion engine
+      engine = 'nvim-cmp',
+      -- Use the tab key to trigger autocompletion
+      mapping = {
+        ['<Tab>'] = cmp.mapping.complete(),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true })
+      },
+      sources = {
+        { name = 'nvim_lsp' },
+        { name = 'path' },
+        { name = 'buffer' }
+      },
+    },
+  },
+
+  -- Set up the LSP capabilities for the autocompletion engine
+  -- You may need to adjust this depending on the language servers you're using
+  -- and the capabilities they provide
+  -- The `update_capabilities` function comes from the `cmp_nvim_lsp` plugin
+  -- which extends the capabilities provided by the LSP server
+  -- to support nvim-cmp
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'path' },
+    { name = 'buffer' }
+  },
+  formatting = {
+    format = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+  }
+})
+
+
+-- Set tabs to 4 spaces
+vim.cmd('set tabstop=4')
+vim.cmd('set shiftwidth=4')
+vim.cmd('set expandtab')
+
+-- Disable swapfile
+vim.cmd('set noswapfile')
+
+-- Enable Unicode support
+vim.cmd('set encoding=utf-8')
+
+-- Show line numbers
+vim.cmd('set number')
+
+-- Enable mouse support
+vim.cmd('set mouse=a')
+
+-- Enable syntax highlighting
+vim.cmd('syntax on')
+
+-- Add a status line with file information
+vim.cmd('set laststatus=2')
+
+-- Set the default file format to Unix (LF line endings)
+vim.cmd('set fileformat=unix')
+
+-- Add a trailing newline to files if one doesn't exist
+vim.cmd('set endofline')
+
+-- Enable highlighting of matching parentheses
+vim.cmd('set showmatch')
+
+-- Show the current mode (normal, insert, etc.) in the status line
+vim.cmd('set showmode')
+
+-- Enable incremental search
+vim.cmd('set incsearch')
+
+-- Enable case-insensitive search
+vim.cmd('set ignorecase')
+vim.cmd('set smartcase')
+
