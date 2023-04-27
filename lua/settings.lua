@@ -1,3 +1,7 @@
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+
 -- Load the cmp plugin
 local cmp = require('cmp')
 
@@ -47,10 +51,32 @@ cmp.setup({
     { name = 'path' },
     { name = 'buffer' }
   },
-  formatting = {
-    format = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-  }
+    formatting = {
+        format = function(entry, vim_item)
+            if vim.tbl_contains({ 'path' }, entry.source.name) then
+                local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
+                if icon then
+                    vim_item.kind = icon
+                    vim_item.kind_hl_group = hl_group
+                    return vim_item
+                end
+            end
+            return require('lspkind').cmp_format({ with_text = true })(entry, vim_item)
+        end
+    }
 })
+
+-- LSP setup
+local lsp = require('lsp-zero').preset({
+  name = 'minimal',
+  set_lsp_keymaps = true,
+  manage_nvim_cmp = true,
+  suggest_lsp_servers = false,
+})
+
+lsp.nvim_workspace()
+
+lsp.setup()
 
 
 -- Set tabs to 4 spaces
@@ -94,4 +120,3 @@ vim.cmd('set incsearch')
 -- Enable case-insensitive search
 vim.cmd('set ignorecase')
 vim.cmd('set smartcase')
-

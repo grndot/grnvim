@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/grn/.local/share/nvim/site/pack/packer/start/FsAutoComplete",
     url = "https://github.com/fsharp/FsAutoComplete"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/grn/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/grn/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -89,10 +94,35 @@ _G.packer_plugins = {
     path = "/home/grn/.local/share/nvim/site/pack/packer/start/lsp-status.nvim",
     url = "https://github.com/nvim-lua/lsp-status.nvim"
   },
+  ["lsp-zero.nvim"] = {
+    loaded = true,
+    path = "/home/grn/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/grn/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
+  },
+  ["lua-language-server"] = {
+    loaded = true,
+    path = "/home/grn/.local/share/nvim/site/pack/packer/start/lua-language-server",
+    url = "https://github.com/LuaLS/lua-language-server"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/grn/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/grn/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/grn/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,

@@ -13,6 +13,11 @@ return require('packer').startup(function()
     -- Packer manages itself
     use 'wbthomason/packer.nvim'
 
+    -- MasonLSP
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim"}
+
     -- File explorer
     use 'kyazdani42/nvim-tree.lua'
 
@@ -21,6 +26,12 @@ return require('packer').startup(function()
 
     -- Git integration
     use 'tpope/vim-fugitive'
+
+    -- LSP zero
+    use 'VonHeikemen/lsp-zero.nvim'
+
+    -- LSPkind (icons)
+    use 'onsails/lspkind.nvim'
 
     -- Autocompletion
     use {'hrsh7th/nvim-cmp'}
