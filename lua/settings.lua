@@ -66,43 +66,43 @@ lsp.nvim_workspace()
 lsp.setup()
 
 -- Set tabs to 4 spaces
-vim.cmd('set tabstop=4')
-vim.cmd('set shiftwidth=4')
-vim.cmd('set expandtab')
+vim.o.tabstop=4
+vim.o.shiftwidth=4
+vim.o.expandtab=true
 
 -- Disable swapfile
-vim.cmd('set noswapfile')
+vim.o.noswapfile=true
 
 -- Enable Unicode support
-vim.cmd('set encoding=utf-8')
+vim.o.encoding='utf-8'
 
 -- Show line numbers
-vim.cmd('set number')
+vim.o.number=true
 
 -- Enable mouse support
-vim.cmd('set mouse=a')
+vim.o.mouse='a'
 
 -- Enable syntax highlighting
-vim.cmd('syntax on')
+vim.o.syntax='on'
 
 -- Add a status line with file information
-vim.cmd('set laststatus=2')
+vim.o.laststatus=2
 
 -- Set the default file format to Unix (LF line endings)
-vim.cmd('set fileformat=unix')
+vim.o.fileformat='unix'
 
 -- Add a trailing newline to files if one doesn't exist
-vim.cmd('set endofline')
+vim.o.endofline=true
 
 -- Enable highlighting of matching parentheses
-vim.cmd('set showmatch')
+vim.o.showmatch=true
 
 -- Show the current mode (normal, insert, etc.) in the status line
-vim.cmd('set showmode')
+vim.o.showmode=true
 
 -- Enable incremental search
-vim.cmd('set incsearch')
+vim.o.incsearch=true
 
 -- Enable case-insensitive search
-vim.cmd('set ignorecase')
-vim.cmd('set smartcase')
+vim.o.ignorecase=true
+vim.o.smartcase=true
