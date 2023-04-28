@@ -1,6 +1,3 @@
-require("mason").setup()
-require("mason-lspconfig").setup()
-
 
 -- Load the cmp plugin
 local cmp = require('cmp')
@@ -25,9 +22,8 @@ cmp.setup({
       keyword_pattern = "\\k+",
       max_item_count = 5,
       -- Use the nvim-cmp completion engine
-      engine = 'nvim-cmp',
-      -- Use the tab key to trigger autocompletion
-      mapping = {
+      engine = 'nvim-cmp'}},
+  mapping = {
         ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
         ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -37,20 +33,6 @@ cmp.setup({
             c = cmp.mapping.close()}),
         ['<C-M>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
-      sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'path' },
-        { name = 'buffer' }
-      })
-    },
-  },
-
-  -- Set up the LSP capabilities for the autocompletion engine
-  -- You may need to adjust this depending on the language servers you're using
-  -- and the capabilities they provide
-  -- The `update_capabilities` function comes from the `cmp_nvim_lsp` plugin
-  -- which extends the capabilities provided by the LSP server
-  -- to support nvim-cmp
   sources = {
     { name = 'nvim_lsp' },
     { name = 'path' },
@@ -82,7 +64,6 @@ local lsp = require('lsp-zero').preset({
 lsp.nvim_workspace()
 
 lsp.setup()
-
 
 -- Set tabs to 4 spaces
 vim.cmd('set tabstop=4')

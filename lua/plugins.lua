@@ -10,12 +10,13 @@ require('settings')
 
 -- Install and configure plugins using Packer
 return require('packer').startup(function()
-    -- Packer manages itself
-    use 'wbthomason/packer.nvim'
 
     -- MasonLSP
     use {"williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim"}
+
+    -- Packer manages itself
+    use 'wbthomason/packer.nvim'
 
     -- LuaSnip
     use 'L3MON4D3/LuaSnip'
