@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/grn/.local/share/nvim/site/pack/packer/start/FsAutoComplete",
     url = "https://github.com/fsharp/FsAutoComplete"
   },
+  LuaSnip = {
+    loaded = true,
+    path = "/home/grn/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/grn/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -88,6 +93,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/grn/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/grn/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["lsp-status.nvim"] = {
     loaded = true,

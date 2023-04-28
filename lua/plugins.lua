@@ -14,9 +14,12 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- MasonLSP
-    use {
-        "williamboman/mason.nvim",
+    use {"williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim"}
+
+    -- LuaSnip
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
 
     -- File explorer
     use 'kyazdani42/nvim-tree.lua'
