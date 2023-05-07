@@ -11,6 +11,12 @@ require('settings')
 -- Install and configure plugins using Packer
 return require('packer').startup(function()
 
+    -- DAP
+    use 'mfussenegger/nvim-dap'
+
+    -- DAP-UI
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
     -- MasonLSP
     use {"williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim"}
