@@ -205,8 +205,8 @@ vim.o.number=true
 -- Mouse disabling
 vim.o.mouse=''
 
--- Enable mouse support
--- vim.o.mouse='a'
+-- Yank to linux buffer 
+vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
 
 -- Enable syntax highlighting
 vim.o.syntax='on'
